@@ -4,6 +4,7 @@ export default function Document() {
   return (
     <Html lang="en">
       <Head>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, user-scalable=yes" />
         <meta name="description" content="Master DevOps, CI/CD, Docker, Kubernetes, and Data Structures through interactive animations and visualizations" />
         <meta name="keywords" content="devops, cicd, docker, kubernetes, jenkins, git, data structures, algorithms, programming, education, visualization, animation" />
         <meta name="author" content="DevOpsFlow" />

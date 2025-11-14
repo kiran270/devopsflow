@@ -19,11 +19,11 @@
   }
   
   .data-node {
-    @apply w-12 h-12 rounded-lg flex items-center justify-center font-bold text-lg transition-all duration-300;
+    @apply w-10 h-10 sm:w-12 sm:h-12 rounded-lg flex items-center justify-center font-bold text-sm sm:text-lg transition-all duration-300;
   }
   
   .array-cell {
-    @apply w-16 h-16 border-2 border-blue-400 bg-blue-500/20 rounded-lg flex items-center justify-center font-bold text-white transition-all duration-500;
+    @apply w-12 h-12 sm:w-16 sm:h-16 border-2 border-blue-400 bg-blue-500/20 rounded-lg flex items-center justify-center font-bold text-sm sm:text-base text-white transition-all duration-500;
   }
 
   .custom-scrollbar::-webkit-scrollbar {
@@ -36,5 +36,55 @@
 
   .custom-scrollbar::-webkit-scrollbar-thumb {
     @apply bg-cyan-500/50 rounded-full hover:bg-cyan-500/70;
+  }
+
+  /* Mobile-specific improvements */
+  @media (max-width: 640px) {
+    /* Prevent horizontal scroll */
+    body {
+      overflow-x: hidden;
+    }
+
+    /* Make code blocks scrollable horizontally */
+    pre {
+      overflow-x: auto;
+      max-width: 100%;
+      white-space: pre;
+      word-wrap: normal;
+    }
+
+    /* Ensure tables are scrollable */
+    table {
+      display: block;
+      overflow-x: auto;
+      white-space: nowrap;
+    }
+
+    /* Make inputs full width on mobile */
+    input[type="text"],
+    input[type="number"] {
+      min-width: 0 !important;
+      width: 100%;
+    }
+
+    /* Adjust button sizes for mobile */
+    button {
+      min-height: 44px; /* iOS recommended touch target */
+      padding-left: 0.75rem;
+      padding-right: 0.75rem;
+    }
+
+    /* Make flex containers wrap on mobile */
+    .flex-nowrap-mobile {
+      flex-wrap: wrap;
+    }
+  }
+
+  /* Improve touch targets */
+  @media (hover: none) and (pointer: coarse) {
+    button, a, input, select {
+      min-height: 44px;
+      min-width: 44px;
+    }
   }
 }
